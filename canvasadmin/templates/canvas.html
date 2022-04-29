@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in asaprecords %}
+        <tr>
+          <td>{{ record.CreatedDate }}</td>
+          <td>{{ record.EventEnrollmentID }}</td>
+          <td>{{ record.ScheduledEvent.Course.CourseName }}</td>
+          <td>{{ record.ScheduledEvent.Course.IsOnline }}</td>
+          <td>{{ record.EnrollmentStatusCd }}</td>
+          <td>{{ record.ScheduledEvent.EventCd }}</td>
+          <td>{{ record.StudentID }}</td>
+          <td>{{ record.CustomerID }}</td>
+          <td>{{ record.Person.Email }}</td>
+          <td>{{ record.Person.FirstName }}</td>
+          <td>{{ record.Person.LastName }}</td>                    
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

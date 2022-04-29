@@ -11,16 +11,16 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     {% if title %}
-        <title>Canvas Admin - {{ title }}</title>
+        <title>Canvas/ASAP Admin - {{ title }}</title>
     {% else %}
-        <title>Canvas Admin</title>
+        <title>Canvas/ASAP Admin</title>
     {% endif %}
 </head>
 <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">Canvas Admin</a>
+          <a class="navbar-brand mr-4" href="/">Canvas/ASAP Admin</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,8 +31,10 @@
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
-              <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+              <a class="nav-item nav-link" href="{{ url_for('asapclasses') }}">ASAP Classes</a>
+              <a class="nav-item nav-link" href="{{ url_for('asapstudents') }}">ASAP Students</a>
+              <a class="nav-item nav-link" href="{{ url_for('canvasclasses') }}">Canvas Classes</a>
+              <a class="nav-item nav-link" href="{{ url_for('canvasstudents') }}">Canvas Students</a>
             </div>
           </div>
         </div>
@@ -51,19 +53,6 @@
             {% endif %}
           {% endwith %}
           {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Navigation</h3>
-            <p class='text-muted'>Do stuff
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Get ASAP Classes</li>
-                <li class="list-group-item list-group-item-light">Rename Canvas Classes</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
-          </div>
         </div>
       </div>
     </main>
