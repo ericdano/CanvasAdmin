@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  <table id="data" class="table table-striped">
+      {% for table in tables %}
+        {{ titles[loop.index]}}
+        {{ table|safe }}
+      {% endfor %}    
+  </table>
+
+  <body></body>
+  {% endblock %}
